@@ -5,6 +5,10 @@ on:
     branches:
       - main
 
+permissions:
+  contents: read
+  security-events: write  # ✅ This allows CodeQL results to be uploaded
+
 jobs:
   security-scan:
     name: Security Scan
