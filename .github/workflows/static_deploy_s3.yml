@@ -1,4 +1,4 @@
-name: CI/CD Pipeline to Deploy Static Website to S3
+name: CI/CD Pipeline to Run a CodeQL Scan and Deploy Static Website to S3
 
 on:
   push:
