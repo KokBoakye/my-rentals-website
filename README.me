@@ -1,0 +1,102 @@
+Resume Website Deployment (S3 + CloudFront + GitHub Actions)
+
+📦 Project Structure
+my-rentals-website/
+├── .github/
+│   └── workflows/
+│       └── static_deploy_s3.yml         # GitHub Actions workflow
+├── index.html                          # Main HTML property rental page
+├── styles.css                          # Optional custom styles 
+├── images/                             # 6 photos for website
+│   ├── image1.jpg
+│   ├── image2.jpg
+│   ├── IMG_4648.jpg
+│   ├── IMG_4685.jpg
+│   ├── IMG_4714.jpg
+│   └── IMG_4741.jpg
+└── README.md
+
+
+🛠️ 1. AWS Setup
+✅ a. Create an S3 Bucket
+
+Go to S3 > Create bucket
+Name: rentals-site-yourname
+Region: eu-north-1 or your choice
+Uncheck Block all public access (for public website)
+Enable Static website hosting
+Index document: index.html
+✅ b. Set the Bucket Policy (Public Read Access)
+
+{
+  "Version": "2012-10-17",
+  "Statement": [
+    {
+      "Sid": "PublicReadGetObject",
+      "Effect": "Allow",
+      "Principal": "*",
+      "Action": "s3:GetObject",
+      "Resource": "arn:aws:s3:::resume-site-yourname/*"
+    }
+  ]
+}
+✅ c. Create a CloudFront Distribution
+
+Origin: your S3 bucket (not the S3 website URL!)
+Enable Website Hosting support
+Set default root object: index.html
+Copy the Distribution ID (e.g., E3XXXXXX) for GitHub
+
+🔐 2. GitHub Secrets Setup
+In your GitHub repo → Settings > Secrets and Variables > Actions > New repository secret
+
+Add these:
+
+Name	             Example
+AWS_ACCESS_KEY_ID	AKIAXXX
+AWS_SECRET_ACCESS_KEY	abcd1234XYZ...
+AWS_REGION	eu-north-1
+S3_BUCKET_NAME	resume-site-yourname
+CLOUDFRONT_DISTRIBUTION_ID	E3XXXXXX
+
+⚙️ 3. GitHub Actions Workflow
+Create .github/workflows/deploy.yml:
+
+name: Deploy to S3 and Invalidate CloudFront
+
+on:
+  push:
+    branches:
+      - main
+jobs:
+  deploy:
+    name: Deploy
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+
+      - name: Configure AWS credentials
+        uses: aws-actions/configure-aws-credentials@v4
+        with:
+          aws-access-key-id: ${{ secrets.AWS_ACCESS_KEY_ID }}
+          aws-secret-access-key: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
+          aws-region: ${{ secrets.AWS_REGION }}
+
+      - name: Sync files to S3
+        run: |
+          aws s3 sync . s3://${{ secrets.S3_BUCKET_NAME }} --delete --exclude ".*" --exclude "dockerfile" --exclude "*.txt"
+
+      - name: Invalidate CloudFront cache
+        run: |
+          aws cloudfront create-invalidation --distribution-id ${{ secrets.CLOUDFRONT_DISTRIBUTION_ID }} --paths "/*"
+
+✅ 4. Deploy
+Now every time you push to the main branch, GitHub Actions will:
+
+Upload your updated resume files to S3.
+Invalidate the CloudFront cache so updates appear instantly.
+
+🌐 5. Access Your Site
+S3 URL: http://resume-site-yourname.s3-website.eu-north-1.amazonaws.com
+CloudFront URL: https://your-distribution-id.cloudfront.net (use this in production)
