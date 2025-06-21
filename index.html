@@ -1,164 +1,113 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Kwabena Okyere Boakye Profile</title>
-  <link rel="stylesheet" href="./css/style.css">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Your Airbnb Stay | Cozy & Modern Retreat</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet"/>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap" rel="stylesheet">
+  <style>
+    body {
+      font-family: 'Montserrat', sans-serif;
+      background-color: #f8f9fa;
+    }
+    header {
+      background: url('images/IMG_4648.jpg') no-repeat center center/cover;
+      height: 70vh;
+      color: white;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      position: relative;
+    }
+    header::after {
+      content: '';
+      position: absolute;
+      top: 0; left: 0;
+      width: 100%; height: 100%;
+      background: rgba(0,0,0,0.5);
+    }
+    header .content {
+      position: relative;
+      z-index: 1;
+    }
+    .section-title {
+      color: #343a40;
+      font-weight: 700;
+      margin-bottom: 1rem;
+    }
+    footer {
+      background: #343a40;
+      color: #fff;
+      text-align: center;
+      padding: 1rem 0;
+    }
+  </style>
 </head>
+
 <body>
-<html>
-  <head>
-    <title>My Portfolio</title>
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link href="css/bootstrap.min.css" rel="stylesheet" media="screen">
-    <link href="css/font-awesome.min.css" rel="stylesheet">
-    <link href="css/custom.css" rel="stylesheet" media="screen">
-    <link href='https://fonts.googleapis.com/css?family=Audiowide' rel='stylesheet' type='text/css'>
-    <link href='https://fonts.googleapis.com/css?family=Iceland' rel='stylesheet' type='text/css'>
-  </head>
-  <body>
-    <nav class="navbar navbar-inverse navbar-fixed-top" role="navigation">
-      <div class="container">
-        <div class="navbar-header">
-          <a class="navbar-brand" href="#">Kwabena Okyere Boakye</a>
-        </div>
-        <div class="collapse navbar-collapse">
-          <ul class="nav navbar-nav navbar-right">
-            <li class="active"><a href="#"><i class="fa fa-home fa-2x fa-fw"></i>Home</a></li>
-            <li><a href="https://github.com/KokBoakye"><i class="fa fa-github fa-2x fa-fw"></i>Github</a></li>
-            <li><a href="https://www.linkedin.com/in/kwabena-okyere-boakye/"><i class="fa fa-linkedin-square fa-2x fa-fw"></i>LinkedIn</a></li>
-            <li><a href="#contact" data-toggle="modal"><i class="fa fa-envelope fa-2x fa-fw"></i>Contact</a></li>
-          </ul>
-        </div>
-      </div>
-    </nav>
 
-    <div class="container">
-      <div class="row">
-        <div class="col-sm-5 name-intro">
-          <h2 class="main-name">Kwabena Okyere Boakye</h2>
-          <h3 class="position">DevOps Engineer</h3>
-          <p class="resume">London, United Kingdom</p>
-          <a class="resume" href="mailto:kokboakye@gmail.com">kokboakye@gmail.com</a>
-        </div>
-        <div class="col-sm-4 col-sm-offset-2">
-          <img id="main-pic" src="./images/pic.jpg">
-        </div>
-      </div>
-      <hr id="strong-line">
-
-      <div class="row">
-        <div class="col-sm-12">
-          <h3 class="title">Professional Summary</h3>
-          <hr> 
-          <p class="resume">DevOps Engineer with a background in sales leadership and operations. 2 years experience in cloud infrastructure, CI/CD, Linux systems, and automation. Currently skilled in AWS, Docker, GitHub Actions, and YAML. Eager to contribute to collaborative tech environments that drive innovation and continuous delivery.</p>
-        </div>
-      </div>
-      <br /> 
-
-      <div class="row">
-        <div class="col-sm-12">
-          <h3 class="title">Technical Skills</h3>
-          <hr> 
-          <div class="col-sm-3">
-            <p class="subtitle">Languages & Tools</p>
-            <ul class="resume">
-              <li>HTML, CSS, Python, YAML, Git, Bash</li>
-            </ul>
-            <p class="subtitle">Containerization</p>
-            <ul class="resume">
-              <li>Docker</li>
-            </ul>
-          </div>
-          <div class="col-sm-3">
-            <p class="subtitle">Cloud & Deployment</p>
-            <ul class="resume">
-              <li>AWS (EC2, S3, EBS)</li>
-              <li>GitHub Actions</li>
-              <li>CI/CD Pipelines</li>
-            </ul>
-          </div>
-          <div class="col-sm-3">
-            <p class="subtitle">Operating Systems</p>
-            <ul class="resume">
-              <li>Linux (Ubuntu, CentOS)</li>
-              <li>Windows</li>
-            </ul>
-          </div>
-          <div class="col-sm-3">
-            <p class="subtitle">Other Tools</p>
-            <ul class="resume">
-              <li>VS Code, GitHub, Git CLI</li>
-              <li>Slack, Jira</li>
-            </ul>
-          </div>
-        </div>
-      </div>
-      <br />
-
-      <div class="row">
-        <div class="col-sm-12">
-          <h3 class="title">Education</h3>
-          <hr> 
-          <ul class="resume">
-            <li><strong>MBA –</strong> University of South Wales <span style="color: #5789e1;">2021</span></li>
-            <li><strong>BSc in Development Planning –</strong> KNUST <span style="color: #5789e1;">2013</span></li>
-            <li><strong>Data Science Program –</strong> ALX Africa <span style="color: #5789e1;">2023</span></li>
-          </ul>
-        </div>
-      </div>
-      <br />
-
-      <div class="row">
-        <div class="col-sm-12">
-          <h3 class="title">Certifications</h3>
-          <hr> 
-          <ul class="resume">
-            <li>AWS Cloud Practitioner</li>
-            <li>AWS Educate: Cloud 101</li>
-            <li>Linux Unhatched (NDG)</li>
-          </ul>
-        </div>
-      </div>
-      <br />
-
-      <div class="row">
-        <div class="col-sm-12">
-          <h3 class="title">Professional Interests</h3>
-          <hr> 
-          <ul class="resume">
-            <li>DevOps, Cloud Infrastructure, and Automation</li>
-            <li>System Monitoring and CI/CD</li>
-            <li>Linux Administration and Scripting</li>
-            <li>Technical Writing and Mentoring</li>
-          </ul>
-        </div>
-      </div>
-      <br />
-      <hr>
-
-      <footer class="main-footer">
-        <div class="row">
-          <div class="col-sm-4">
-            <a href="#top">Back to Top<i class="fa fa-arrow-circle-up fa-fw"></i></a>
-          </div>
-          <div class="col-sm-4">
-            <p>2024 &copy; Kwabena Okyere Boakye.</p>
-          </div>
-          <div class="col-sm-4">
-            <p class="pull-right"><a href="#contact" data-toggle="modal"><i class="fa fa-envelope fa-2x fa-fw"></i></a></p>
-            <p class="pull-right"><a href="https://www.linkedin.com/in/kwabena-okyere-boakye/"><i class="fa fa-linkedin-square fa-2x fa-fw"></i></a></p>
-            <p class="pull-right"><a href="https://github.com/KokBoakye"><i class="fa fa-github fa-2x fa-fw"></i></a></p>
-          </div>
-        </div>
-      </footer>
+  <header>
+    <div class="content">
+      <h1>Welcome to Your Airbnb Stay</h1>
+      <p>Modern comfort in the heart of Osu, Accra</p>
+      <a href="https://airbnb.com/yourlisting" target="_blank" class="btn btn-light mt-3">Book Now on Airbnb</a>
     </div>
+  </header>
 
-    <script src="https://code.jquery.com/jquery.js"></script>
-    <script src="js/bootstrap.min.js"></script>
-  </body>
-</html>
-<script src="./js/script.js"></script>
+  <main class="container my-5">
+    <section>
+      <h2 class="section-title">About the Property</h2>
+      <p>
+        Enjoy your stay in our beautifully designed space—perfect for couples, solo travelers, and business visitors. Located in the vibrant neighborhood of Osu, this fully furnished apartment features high-speed Wi-Fi, a smart TV, a fully equipped kitchen, and more.
+      </p>
+    </section>
+
+    <section class="mt-5">
+      <h2 class="section-title">Amenities</h2>
+      <ul class="row list-unstyled">
+        <li class="col-md-4 mb-2">✔ Free Wi-Fi</li>
+        <li class="col-md-4 mb-2">✔ Air Conditioning</li>
+        <li class="col-md-4 mb-2">✔ Equipped Kitchen</li>
+        <li class="col-md-4 mb-2">✔ Smart TV + Netflix</li>
+        <li class="col-md-4 mb-2">✔ Washer & Dryer</li>
+        <li class="col-md-4 mb-2">✔ Free Parking</li>
+      </ul>
+    </section>
+
+    <section class="mt-5">
+      <h2 class="section-title">Gallery</h2>
+      <div class="row g-3">
+        <div class="col-md-4"><img src="image1.jpg" class="img-fluid rounded" alt="Living room" /></div>
+        <div class="col-md-4"><img src="image2.jpg" class="img-fluid rounded" alt="Bedroom" /></div>
+        <div class="col-md-4"><img src="image3.jpg" class="img-fluid rounded" alt="Kitchen" /></div>
+      </div>
+    </section>
+
+    <section class="mt-5">
+      <h2 class="section-title">Location</h2>
+      <p>[Short description: e.g., “Just 10 minutes from the airport and 5 minutes from city center.”]</p>
+      <div class="ratio ratio-16x9">
+        <iframe
+          src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d..."
+          style="border:0;" allowfullscreen="" loading="lazy">
+        </iframe>
+      </div>
+    </section>
+
+    <section class="mt-5 text-center">
+      <h2 class="section-title">Book Your Stay</h2>
+      <p>Ready to relax and unwind? Reserve your dates now on Airbnb.</p>
+      <a href="https://airbnb.com/yourlisting" target="_blank" class="btn btn-primary">Check Availability</a>
+    </section>
+  </main>
+
+  <footer>
+    <p>&copy; 2024 Your Airbnb | Hosted by Kwabena Okyere Boakye | <a href="mailto:youremail@example.com" class="text-light">Contact</a></p>
+  </footer>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
 </body>
 </html>
